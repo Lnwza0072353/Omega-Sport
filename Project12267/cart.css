@@ -1,0 +1,206 @@
+html, body {
+    height: auto; /* ให้ความสูงของหน้าเว็บปรับตามเนื้อหา */
+    overflow-y: auto; /* เปิดการเลื่อนในแนวตั้ง */
+    margin: 0;
+    padding: 0;
+    font-family: "Underdog", system-ui;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.total {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* ปุ่มชำระเงิน */
+.checkoutButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkoutButton:hover {
+    background-color: #45a049;
+}
+
+/* ป๊อปอัป */
+.paymentPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* สีพื้นหลังโปร่งใส */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.paymentContent {
+    background-color: white;
+    width: 60%; /* ปรับความกว้างเป็น 50% ของหน้าจอ */
+    max-width: 600px; /* กำหนดความกว้างสูงสุด */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.closePopup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.payInput {
+    width: 90%;
+    padding: 10px;
+    margin: 15px 0; /* เพิ่มระยะห่างระหว่างช่องกรอกข้อมูล */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.paymentOptions label {
+    display: block;
+    margin: 10px 0;
+}
+
+.payButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.payButton:hover {
+    background-color: #45a049;
+}
+
+.cardIcons {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.cardInfo {
+    display: flex;
+    gap: 10px;
+}
+
+.payInput.sm {
+    width: calc(33.33% - 10px);
+}
+
+.hidden {
+    display: none;
+}
+
+/* แถบเมนู */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50; /* สีเขียว */
+    padding: 10px 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* ชื่อแบรนด์ */
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ลิงก์เมนู */
+.navbar-center {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* ช่องค้นหา */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* ไอคอนตะกร้าสินค้า */
+.cart-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+
+.cart-icon i {
+    font-size: 20px;
+    color: white;
+}
+
+.cart-count {
+    font-size: 14px;
+    font-weight: bold;
+}
