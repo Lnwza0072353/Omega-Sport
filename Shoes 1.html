@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Gym 2 Station</title>
+    <link rel="stylesheet" href="shoes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.html">Omega Sports</a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Promotions</a></li>
+                <li><a href="index.html">Categories</a></li>
+                <li><a href="index.html">Featured Products</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="search-cart">
+            <input type="text" id="searchInput" placeholder="Search for products...">
+            <a href="cart.html" class="cart-icon-container">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="product-container">
+        <!-- ภาพสินค้า -->
+        <div class="product-images">
+            <div class="thumbnail-list">
+                <div class="thumbnail">
+                    <img src="img/sport1.1.webp" alt="Abdominal">
+                    <span class="thumbnail-text">ABDOMINAL</span>
+                </div>
+                <div class="thumbnail">
+                    <img src="img/sport1.2.webp" alt="Machine">
+                    <span class="thumbnail-text">MACHINE</span>
+                </div>
+                <div class="thumbnail">
+                    <img src="img/sport1.3.webp" alt="Boxing">
+                    <span class="thumbnail-text">BOXING</span>
+                </div>
+                <div class="thumbnail">
+                    <img src="img/sport1.4.jpg" alt="Home Gym">
+                    <span class="thumbnail-text">HOME GYM</span>
+                </div>
+            </div>
+            <div class="main-image">
+                <img src="img/Sport.png alt="Main Product Image" id="mainImage">
+            </div>
+        </div>
+
+        <!-- รายละเอียดสินค้า -->
+        <div class="product-details">
+            <h1 class="product-name">NIKE Winflo 11 รองเท้าวิ่งผู้ชาย</h1>
+            <p class="price">
+                <span class="current-price">฿2,220</span>
+                <span class="old-price">฿3,700</span>
+            </p>
+            <p class="status">✅ สินค้าพร้อมส่ง</p>
+
+            <!-- เลือกสี -->
+            <div class="color-options">
+                <label>เลือกสี:</label>
+                <div class="color-buttons">
+                    <img class="color-image active" src="img/black-shoe.jpg" alt="Black" data-color="Black" data-image="img/black-shoe-main.jpg">
+                    <img class="color-image" src="img/red-shoe.jpg" alt="Red" data-color="Red" data-image="img/red-shoe-main.jpg">
+                    <img class="color-image" src="img/green-shoe.jpg" alt="Green" data-color="Green" data-image="img/green-shoe-main.jpg">
+                    <img class="color-image" src="img/blue-shoe.jpg" alt="Blue" data-color="Blue" data-image="img/blue-shoe-main.jpg">
+                </div>
+            </div>
+
+            <!-- เลือกไซต์ -->
+            <div class="options">
+                <label>เลือกไซต์:</label>
+                <div class="size-buttons">
+                    <button class="size-button">US 7</button>
+                    <button class="size-button">US 8</button>
+                    <button class="size-button active">US 9</button>
+                    <button class="size-button">US 9.5</button>
+                    <button class="size-button">US 10</button>
+                    <button class="size-button">US 10.5</button>
+                    <button class="size-button">US 11</button>
+                    <button class="size-button">US 12</button>
+                    <button class="size-button">US 13</button>
+                </div>
+            </div>
+
+            <div class="quantity">
+                <label for="quantity">จำนวน:</label>
+                <input type="number" id="quantity" value="1" min="1">
+            </div>
+            <button class="add-to-cart">ใส่รถเข็น</button>
+        </div>
+    </div>
+    
+    <section class="new-product">
+        <h2>ข้อมูลสินค้า</h2>
+        <p>ถุงมือออกกำลังกายผู้หญิง S SPORTS รุ่น SC-SG604 แบบเปิดนิ้วและหลังมือ ตัดเย็บจากผ้าและวัสดุสังเคราะห์ที่เนื้อผ้ามีความยืดหยุ่น น้ำหนักเบา และระบายอากาศได้ดี</p>
+        <ul>
+            <li>ตัดเย็บจากผ้าและวัสดุสังเคราะห์ที่เนื้อผ้ามีความยืดหยุ่น</li>
+            <li>น้ำหนักเบา และระบายอากาศได้ดี</li>
+            <li>พร้อมแถบหนามเตยเพื่อให้กระชับและซัพพอร์ตข้อมือ</li>
+            <li>เหมาะสำหรับการเล่นเวทหรือออกกำลังกาย</li>
+        </ul>
+        <p>รหัสสินค้า: SC-SG604PK/GY</p>
+        <p>สี: สีชมพู</p>
+    </section>
+
+   
+</main>
+<script src="cart.js"></script>
+<script src="equipment.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const thumbnails = document.querySelectorAll('.thumbnail img');
+    const mainImage = document.getElementById('mainImage');
+    const optionButtons = document.querySelectorAll('.option-button');
+    const priceElement = document.querySelector('.price');
+    const thumbnailList = document.querySelector('.thumbnail-list');
+
+    const basePrice = 390; // ราคาของ Basic Set
+    const proSetPrice = 13890; // ราคาของ Pro Set
+
+    // รูปภาพสำหรับ Basic Set
+    const basicSetImages = [
+        { src: 'img/sport1.1.webp', text: 'ABDOMINAL' },
+        { src: 'img/sport1.2.webp', text: 'MACHINE' },
+        { src: 'img/sport1.3.webp', text: 'BOXING' },
+        { src: 'img/sport1.4.jpg', text: 'HOME GYM' }
+    ];
+
+    // รูปภาพสำหรับ Pro Set
+    const proSetImages = [
+        { src: 'img/sport1.1webp', text: 'PRO ABDOMINAL' },
+        { src: 'img/pro gym 2.1.webp', text: 'PRO MACHINE' },
+        { src: 'img/Home gym 2.2.webp', text: 'PRO BOXING' },
+        { src: 'img/Home gym 2.3.webp', text: 'PRO HOME GYM' }
+    ];
+
+    // ฟังก์ชันเปลี่ยนรูปภาพ Thumbnail
+    function updateThumbnails(images) {
+        thumbnailList.innerHTML = ''; // ลบรูปภาพเดิมทั้งหมด
+        images.forEach(image => {
+            const thumbnailDiv = document.createElement('div');
+            thumbnailDiv.classList.add('thumbnail');
+            thumbnailDiv.innerHTML = `
+                <img src="${image.src}" alt="${image.text}">
+                <span class="thumbnail-text">${image.text}</span>
+            `;
+            thumbnailList.appendChild(thumbnailDiv);
+
+            // เพิ่ม Event Listener ให้ Thumbnail ใหม่
+            thumbnailDiv.querySelector('img').addEventListener('click', () => {
+                mainImage.src = image.src;
+
+                // เพิ่มคลาส active ให้ Thumbnail ที่ถูกเลือก
+                document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+                thumbnailDiv.classList.add('active');
+            });
+        });
+
+        // ตั้งค่า Main Image เป็นรูปภาพแรกในชุด
+        mainImage.src = images[0].src;
+    }
+
+    // เปลี่ยนราคาและรูปภาพเมื่อเลือกตัวเลือกสินค้า
+    optionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // ลบคลาส active จากปุ่มอื่น ๆ
+            optionButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // เปลี่ยนราคาและรูปภาพ
+            if (button.textContent.includes('Pro Set')) {
+                priceElement.innerHTML = `฿${proSetPrice.toLocaleString()} <span class="old-price">฿26,900</span>`;
+                updateThumbnails(proSetImages); // เปลี่ยนเป็นรูปภาพของ Pro Set
+            } else {
+                priceElement.innerHTML = `฿${basePrice.toLocaleString()} <span class="old-price">฿390</span>`;
+                updateThumbnails(basicSetImages); // เปลี่ยนกลับเป็นรูปภาพของ Basic Set
+            }
+        });
+    });
+
+    // ตั้งค่าเริ่มต้นเป็น Basic Set
+    updateThumbnails(basicSetImages);
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('.toggle-specs');
+    const hiddenSpecs = document.querySelector('.hidden-specs');
+
+    toggleButton.addEventListener('click', () => {
+        if (hiddenSpecs.style.display === 'none' || hiddenSpecs.style.display === '') {
+            hiddenSpecs.style.display = 'table-row-group'; // แสดงข้อมูลเพิ่มเติม
+            toggleButton.textContent = 'ซ่อน';
+        } else {
+            hiddenSpecs.style.display = 'none'; // ซ่อนข้อมูลเพิ่มเติม
+            toggleButton.textContent = 'แสดงเพิ่ม';
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const colorImages = document.querySelectorAll('.color-image');
+    const sizeButtons = document.querySelectorAll('.size-button');
+    const addToCartButton = document.querySelector('.add-to-cart');
+    const cartCountElement = document.getElementById('cartCount');
+    let selectedColor = 'Black'; // ค่าเริ่มต้นของสีที่เลือก
+    let selectedSize = 'US 9'; // ค่าเริ่มต้นของไซต์ที่เลือก
+
+    // จัดการการเลือกสี
+    colorImages.forEach(image => {
+        image.addEventListener('click', () => {
+            colorImages.forEach(img => img.classList.remove('active'));
+            image.classList.add('active');
+            selectedColor = image.getAttribute('data-color');
+            console.log(`Selected color: ${selectedColor}`);
+        });
+    });
+
+    // จัดการการเลือกไซต์
+    sizeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            sizeButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            selectedSize = button.textContent;
+        });
+    });
+
+    // จัดการการกดปุ่ม "ใส่รถเข็น"
+    addToCartButton.addEventListener('click', () => {
+        const productName = document.querySelector('.product-name').textContent;
+        const productPrice = parseFloat(document.querySelector('.current-price').textContent.replace('฿', '').replace(',', ''));
+        const quantity = parseInt(document.getElementById('quantity').value) || 1;
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.name === productName && item.size === selectedSize && item.color === selectedColor);
+
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            cart.push({ name: productName, price: productPrice, size: selectedSize, color: selectedColor, quantity: quantity });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCountElement.textContent = totalQuantity;
+    });
+});
+</script>
+</body>
+</html>
